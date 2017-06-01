@@ -1,11 +1,6 @@
 module.exports = {
   parser: 'babel-eslint',
-  
-  extends: [
-    'plugin:import/errors',
-    'plugin:import/warnings'
-  ],
-  
+
   plugins: [
     'mocha',
     'babel',
@@ -19,6 +14,12 @@ module.exports = {
     node: true,
     mocha: true,
     browser: true,
+  },
+
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 6,
+    ecmaFeatures: { experimentalObjectRestSpread: true },
   },
 
   rules: {
@@ -95,5 +96,14 @@ module.exports = {
 
     'mocha/handle-done-callback': 'error',
     'mocha/no-exclusive-tests': 'error',
+
+    'import/no-unresolved': 'error',
+    'import/named': 'error',
+    'import/namespace': 'error',
+    'import/default': 'error',
+    'import/export': 'error',
+    'import/no-named-as-default': 'error',
+    'import/no-named-as-default-member': 'error',
+    'import/no-duplicates': 'error',
   }
 }
